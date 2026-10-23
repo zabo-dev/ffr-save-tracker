@@ -1,6 +1,6 @@
-# Final Fantasy Resonance Save Viewer
+# Resonance Codex
 
-A browser-based save viewer and completion tracker for **Final Fantasy Resonance** (PC/Steam). Load your save file to see your party, Visions, Espers, gear, chests, side quests and achievements at a glance, plus a chapter-by-chapter story progression with bosses, weaknesses and collectibles.
+**Resonance Codex** is a browser-based save viewer and completion tracker for **Final Fantasy Resonance** (PC/Steam). Load your save file to see your party, Visions, Espers, gear, chests, side quests and achievements at a glance, plus a chapter-by-chapter story progression with bosses, weaknesses and collectibles.
 
 Available in **English** and **German**. Both languages use the official in-game names.
 

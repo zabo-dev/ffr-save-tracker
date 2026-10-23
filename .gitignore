@@ -1,0 +1,12 @@
+# Game graphics belong to Square Enix and stay local (see tools/import_icons.py)
+icons/*
+!icons/README.md
+
+# Save files and exports
+*.sav
+__pycache__/
+
+# Build output
+tools/extractor/bin/
+tools/extractor/obj/
+.vercel/

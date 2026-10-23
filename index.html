@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Final Fantasy Resonance Save Viewer</title>
+<meta name="description" content="Save viewer for Final Fantasy Resonance: load your save to see your party, Visions, Espers, gear, chests, side quests and achievements, plus story progression with bosses and collectibles.">
+<meta property="og:title" content="Final Fantasy Resonance Save Viewer">
+<meta property="og:description" content="Load your save to see what you have, what's missing and where to get it.">
+<meta name="theme-color" content="#141d58">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l9 14-9 14-9-14z' fill='%2386a6ff' stroke='%23eef1ff' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div class="langbar" role="group" aria-label="Language"><button data-lang="en">EN</button><button data-lang="de">DE</button></div>
+
+<header class="hero">
+  <h1 class="logo"><img id="logoImg" alt="Final Fantasy Resonance" hidden><span id="logoText">FINAL FANTASY RESONANCE</span></h1>
+  <p class="tagline" data-i18n="tagline"></p>
+  <p class="lead" data-i18n="lead"></p>
+
+  <div class="win pathbox">
+    <span class="lbl" data-i18n="pathLabel"></span>
+    <code>%LOCALAPPDATA%\FFRS\Steam\&lt;Steam-ID&gt;\GameSaveData0.sav</code>
+    <span class="hint" data-i18n="pathHint"></span>
+  </div>
+
+  <div class="drop" id="dropzone">
+    <p id="dropText"></p>
+    <label class="btn big"><span data-i18n="loadBtn"></span><input type="file" id="saveFile" accept=".sav" hidden></label>
+    <p class="savemsg" id="saveMsg" role="status"></p>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" role="tablist"></nav>
+
+<main id="main">
+  <div id="panel"></div>
+  <div class="static-panel" data-tab="rules" data-for="en" hidden>
+<section>
+  <h2>Rules and mechanics</h2>
+  <div class="callout">
+    <strong>Difficulty</strong>
+    <p>On Expert, enemies have 1.6× HP and stagger gauge and deal 1.4× damage; the party deals 0.8× damage and earns 1.5× Mastery Points (MRP). EXP and gil are unchanged. No achievement depends on the difficulty.</p>
+  </div>
+  <ul class="rules">
+    <li><b>Mastery Points</b> go only to the equipped Vision. Mastery Rank is tracked per character and Vision; learned abilities stay with the character.</li>
+    <li><b>Staggered finish:</b> defeating the last enemy while it is staggered grants additional MRP.</li>
+    <li><b>Victoria</b> learns a passive at MR 7 that increases MRP by 50 %. It can be carried over to other Visions.</li>
+    <li><b>Awakening</b> raises a Vision's awakening level with Magicite Shard → Magicite → Magicite Cryst at the Moogles of Light.</li>
+    <li><b>Visions</b> are found in Crystal Sanctums; some are side quest rewards and Sephiroth requires a fight.</li>
+    <li><b>Espers</b> fight for three turns after being summoned and cost MP.</li>
+    <li><b>Dualcast</b> casts black or white magic twice per turn.</li>
+    <li><b>Tablet Shards</b> are handed in at the Oblivion Palace. Rewards are given at 3, 60, 76, 80, 84 and 89 shards.</li>
+    <li><b>Aileen</b> forges one weapon per Adamantite once “Forger of Wills” is complete.</li>
+    <li><b>Legendary Arms</b> require an Ancient item and a trial (Lv 50) in the Chamber of Arms.</li>
+    <li><b>Colosseum</b> (Grandshelt): Fledgling League, Brawler League and Gladiator League with five battles each.</li>
+    <li><b>Shops</b> change their stock with each chapter.</li>
+    <li><b>Missables:</b> nothing is missable. After the ending, play continues on the clear save.</li>
+  </ul>
+</section>
+  </div>
+  <div class="static-panel" data-tab="rules" data-for="de" hidden>
+<section>
+  <h2>Regeln und Mechaniken</h2>
+  <div class="callout">
+    <strong>Schwierigkeitsgrad</strong>
+    <p>Auf Expert haben Gegner 1,6× LP und Schockleiste und verursachen 1,4× Schaden; die Gruppe verursacht 0,8× Schaden und erhält 1,5× Mastery-Punkte (MRP). EP und Gil bleiben gleich. Keine Errungenschaft hängt vom Schwierigkeitsgrad ab.</p>
+  </div>
+  <ul class="rules">
+    <li><b>Mastery-Punkte</b> gehen nur an die ausgerüstete Vision. Der Mastery-Rang zählt pro Charakter und Vision; gelernte Fähigkeiten bleiben beim Charakter.</li>
+    <li><b>Abschluss im Schock:</b> Wird der letzte Gegner im geschockten Zustand besiegt, gibt es zusätzliche MRP.</li>
+    <li><b>Victoria</b> lernt bei MR 7 ein Passiv, das MRP um 50 % erhöht. Es lässt sich auf andere Visionen übertragen.</li>
+    <li><b>Erwecken</b> erhöht die Erwachensstufe einer Vision mit Magicite Shard → Magicite → Magicite Cryst bei den Mogrys des Lichts.</li>
+    <li><b>Visionen</b> gibt es in Kristallheiligtümern; manche sind Belohnungen aus Nebenaufträgen, Sephiroth erfordert einen Kampf.</li>
+    <li><b>Esper</b> kämpfen nach der Beschwörung drei Runden und kosten MP.</li>
+    <li><b>Dualcast</b> wirkt Schwarz- oder Weißmagie zweimal pro Zug.</li>
+    <li><b>Tafelfragmente</b> werden im Palast des Vergessens abgegeben. Belohnungen gibt es bei 3, 60, 76, 80, 84 und 89 Fragmenten.</li>
+    <li><b>Aileen</b> schmiedet nach „Forger of Wills“ eine Waffe pro Adamantit.</li>
+    <li><b>Legendäre Waffen</b> erfordern ein antikes Item und eine Prüfung (Lv 50) in der Waffenkammer.</li>
+    <li><b>Kolosseum</b> (Grandshelt): Grünschnabel-, Raufbold- und Gladiatoren-Liga mit je fünf Kämpfen.</li>
+    <li><b>Läden</b> wechseln ihr Sortiment mit jedem Kapitel.</li>
+    <li><b>Verpassbares:</b> Nichts ist verpassbar. Nach dem Ende geht es mit dem Spielstand nach dem Abspann weiter.</li>
+  </ul>
+</section>
+  </div>
+</main>
+
+<footer class="foot">
+  <p data-i18n="disclaimer"></p>
+  <p><span data-i18n="sources"></span> <a href="https://www.rpgsite.net/guide/21486-final-fantasy-resonance-walkthrough-100-items-all-achievements-tablet-shards-step-by-step-guide">RPG Site</a> · <a href="https://www.powerpyx.com/final-fantasy-resonance-trophy-guide-roadmap/">PowerPyx</a> · <a href="https://game8.co/games/Final-Fantasy-Resonance/archives/632567">Game8</a> · <a href="https://vorxu.com/final-fantasy-resonance/side-quests">Vorxu</a> · <a href="https://ffresonance.wiki/database/equipment/">ffresonance.wiki</a> · <a href="https://meowdb.com/db/final-fantasy-resonance/areas">meowdb</a> · <a href="https://atma.gg/final-fantasy-resonance/save-editor">atma.gg</a></p>
+  <p><a href="https://github.com/zabo-dev/ff-resonance-tool">GitHub</a> · <button class="linkbtn" id="reset"></button> · <button class="linkbtn" id="forgetSave" hidden></button></p>
+</footer>
+
+<script>window.EDITION="public";</script>
+<script src="data/catalog.js"></script>
+<script src="data/names.js"></script>
+<script src="data/story.en.js"></script>
+<script src="data/story.de.js"></script>
+<script src="data/areas.js"></script>
+<script src="data/quests.js"></script>
+<script src="icons/manifest.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/save.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

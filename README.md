@@ -1,8 +1,21 @@
-# Resonance Codex
+# FF Resonance Save Tracker
 
-**Resonance Codex** is a browser-based save viewer and completion tracker for **Final Fantasy Resonance** (PC/Steam). Load your save file to see your party, Visions, Espers, gear, chests, side quests and achievements at a glance, plus a chapter-by-chapter story progression with bosses, weaknesses and collectibles.
+**Save tracker, save analyzer and 100 % achievement tracker for Final Fantasy Resonance (PC/Steam).**
 
-Available in **English** and **German**. Both languages use the official in-game names.
+Load your `GameSaveData.sav` and the tracker reads your progress straight from the save file. You see what you have and what's still missing for 100 % completion, and where to find each missing piece:
+
+- Visions and Espers
+- Tablet Shards and Cave Masters
+- Legendary Arms and Adamantite
+- side quests and substories
+- chests and gear
+- all 40 achievements
+
+A chapter-by-chapter story progression with bosses, weaknesses and collectibles comes on top.
+
+It runs entirely in the browser: no install, no account, and the save file never leaves your computer. Available in **English** and **German**, using the official in-game names of both languages.
+
+**Keywords:** Final Fantasy Resonance save analyzer · save viewer · save file reader · achievement tracker · 100 % completion checklist · collectible tracker · Tablet Shard locations · Vision locations
 
 ## Features
 
@@ -22,6 +35,23 @@ Available in **English** and **German**. Both languages use the official in-game
 - **Story progression:** areas in order with recommended levels, new party members, bosses with element weaknesses, collectibles and side quests per chapter.
 - **Live mode (optional):** a small local helper lets the page refresh automatically whenever you save in game.
 - **Private by design:** the save file is decrypted and parsed entirely in your browser. Nothing is uploaded.
+
+## Compared to other tools
+
+The tracker follows the idea of community save analyzers for other games, such as the save completion analysers for *Hollow Knight: Silksong*: load the save, see your completion. It adds a few things specific to Final Fantasy Resonance:
+
+| | Typical save viewer | FF Resonance Save Tracker |
+|---|---|---|
+| Reads the save file in the browser | ✓ | ✓ (decrypts the game's AES-encrypted Unreal Engine save) |
+| Collected vs. missing per category | ✓ | ✓ Visions, Espers, Tablet Shards, Cave Masters, side quests, chests, gear |
+| Where to get missing items | rarely | ✓ chest, shop, side quest or pre-order source on hover |
+| Achievement progress | rarely | ✓ all 40, many checked automatically with counters |
+| Marks what matters for 100 % | – | ✓ entries name the achievements they count toward |
+| Story progression with bosses and weaknesses | – | ✓ |
+| Updates while you play | – | ✓ optional live mode |
+| Official names in several languages | – | ✓ English and German from the game's own text tables |
+
+It's a read-only tracker, not a save editor: it never modifies your save. To edit saves, use the [atma.gg save editor](https://atma.gg/final-fantasy-resonance/save-editor).
 
 ## Usage
 
